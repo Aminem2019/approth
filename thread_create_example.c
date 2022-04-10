@@ -2,11 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "gettid.h"
 
 /* function definition respects pthread_create prototype */
 static void *hello(void *arg)
 {
-    printf("Hello world from pid %d!\n", getpid());
+    printf("Hello world from pid %d tid %d!\n", getpid(), gettid());
     return NULL;
 }
 
